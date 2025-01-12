@@ -40,12 +40,12 @@
 			<artifactId>extentreports</artifactId>
 			<version>${extentreports-version}</version>
 		</dependency>
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.36</version> 
-    <scope>provided</scope>
-</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.36</version>
+			<scope>provided</scope>
+		</dependency>
 
 	</dependencies>
 
@@ -70,15 +70,14 @@
 				<configuration>
 					<forkCount>3</forkCount>
 					<reuseForks>true</reuseForks>
-					<argLine>-Xmx1024m</argLine>
+					<fork>true</fork>
+					<argLine>-Xmx1024m --add-opens jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</argLine>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/testrunners/testNG_regression.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
-
 					</suiteXmlFiles>
-
-
 				</configuration>
+
 			</plugin>
 
 
